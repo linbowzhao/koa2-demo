@@ -47,4 +47,13 @@ router.get('/logout', async function(ctx, next) {
     }
   }
 })
+
+// 测试
+router.post('/test', async function(ctx, next) {
+  if(!check.checkLogin(ctx))ctx.redirect('/sign')
+  ctx.body = {
+    code: 1,
+    mes: '成功'
+  }
+})
 module.exports = router;
